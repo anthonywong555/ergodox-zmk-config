@@ -3,41 +3,31 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define DEAFULT 0
+#define SYMBOL 1
+#define SHORTCUTS 2
+#define BLUETOOTH 3
+
 / {
 	keymap {
 		compatible = "zmk,keymap";
 
-		// This is the default test layer meant for testing that every key on
-		// your keyboard works. Once you have completed this basic test, you can
-		// delete this first section and layer_0 will become your default layer.
-		layer_test {
+		default_layer {
+			label = "DEFAULT";
 			bindings = <
 				&bootloader
-				&kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6
-				&kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6
-				&kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5                     &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6
-				&kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6
-				&kp NUM_0 &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4                                         &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6
-				                                                  &kp NUM_0 &kp NUM_1 &kp NUM_0 &kp NUM_1
-				                                        &kp NUM_3 &kp NUM_4 &kp NUM_2 &kp NUM_2 &kp NUM_3 &kp NUM_4
-				                                                            &kp NUM_5 &kp NUM_5
+				&kp ESC    &kp N1    &kp N2   &kp N3    &kp N4     &kp N5  &kp PRSC   &kp EQUAL  &kp N6 &kp N7 &kp N8   &kp N9   &kp N0        &kp MINUS
+				&kp TAB    &kp Q     &kp W    &kp E     &kp R      &kp T   &kp CLCK   &kp M_MUTE &kp Y  &kp U  &kp I    &kp O    &kp P         &kp BSLH
+				&kp LCTRL  &kp A     &kp S    &kp D     &kp F      &kp G                         &kp H  &kp J  &kp K    &kp L    &kp SEMICOLON &kp BKSP
+				&kp LSHIFT &kp Z     &kp X    &kp C     &kp V      &kp B   &kp M_VOLD &kp M_VOLU &kp N  &kp M  &kp CMMA &kp DOT  &kp FSLH      &kp N1
+				&kp LGUI   &kp LCTRL &kp LALT &kp LEFT  &kp RIGHT                                       &kp UP &kp DOWN &kp LBKT &kp RBKT      &kp N3
+				                                                   &kp DEL  &kp HOME   &kp END    &kp INS
+				                                        &kp SPC    &kp LCTL &kp PGUP   &kp PGDN   &kp LSFT     &kp RET
+				                                                    		&kp LGUI   &kp N3
 			>;
 		};
-
-		layer_0 {
-			bindings = <
-				&bootloader
-				&kp GRAV &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp PRSC   &none      &kp NUMBER_6 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0  &kp K_APP
-				&kp TAB  &kp Q        &kp W        &kp E        &kp R        &kp T        &kp CLCK   &kp M_MUTE &kp Y        &kp U        &kp I        &kp O        &kp P         &kp BSLH
-				&kp ESC  &kp A        &kp S        &kp D        &kp F        &kp G                              &kp H        &kp J        &kp K        &kp L        &kp SEMICOLON &kp BKSP
-				&sl 2    &kp Z        &kp X        &kp C        &kp V        &kp B        &kp M_VOLD &kp M_VOLU &kp N        &kp M        &kp CMMA     &kp DOT      &kp FSLH      &sl 2
-				&none    &none        &kp LALT     &kp LARW     &kp UARW                                                     &kp DARW     &kp RARW     &kp RALT     &none         &to 3
-				                                                             &kp DEL      &kp HOME   &kp END    &kp INS
-				                                                &kp SPC      &kp LCTL     &kp PGUP   &kp PGDN   &kp LSFT     &kp RET
-				                                                                          &kp LGUI   &sl 1
-			>;
-		};
-		layer_1 {
+		symbol_layer {
+			label = "SYMBOL";
 			bindings = <
 				&bootloader
 				&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &to 0 &none &none   &none   &none   &none   &bootloader
@@ -50,7 +40,8 @@
 				                                                                       &none &to 0
 			>;
 		};
-		layer_2 {
+		shortcut_layer {
+			label = "SHORTCUTS";
 			bindings = <
 				&bootloader
 				&none &none &none &none    &none            &none             &none          &to 0            &none &none          &none           &none &none &none
@@ -63,7 +54,8 @@
 				                                                              &none          &none
 			>;
 		};
-		layer_3 {
+		bluetooth_layer {
+			label = "BLUETOOTH";
 			bindings = <
 				&bootloader
 				&none &none     &none        &none     &none    &none &none                &to 0                &none &none        &none        &none        &none        &none
@@ -74,6 +66,19 @@
 				                                                &none &none                &none                &none
 				                                       &none    &none &none                &none                &none &none
 				                                                      &none                &none
+			>;
+		};
+		none_layer {
+			bindings = <
+				&bootloader
+				&none        &none        &none        &none        &none        &none        &none                &none        &none        &none        &none        &none        &none        &none
+				&none        &none        &none        &none        &none        &none        &none                &none        &none        &none        &none        &none        &none        &none
+				&none        &none        &none        &none        &none        &none             				   				&none        &none        &none        &none        &none        &none
+				&none        &none        &none        &none        &none        &none        &none 			   &none        &none        &none        &none        &none        &none        &none
+				&none        &none        &none        &none        &none                                     								 &none        &none        &none        &none        &none
+				                                                	&none        &none             				   &none        &none
+				                                       &none        &none        &none                			   &none        &none        &none
+				                                                    			 &none                			   &none
 			>;
 		};
 	};
