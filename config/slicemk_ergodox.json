@@ -434,7 +434,7 @@
 				},
 				{
 					"Name": "",
-					"Behavior": "\u0026sl",
+					"Behavior": "\u0026mo",
 					"Notes": "",
 					"Args": [
 						"shortcuts"
@@ -514,7 +514,7 @@
 				},
 				{
 					"Name": "",
-					"Behavior": "\u0026to",
+					"Behavior": "\u0026mo",
 					"Notes": "",
 					"Args": [
 						"symbol"
@@ -1530,15 +1530,19 @@
 				},
 				{
 					"Name": "",
-					"Behavior": "\u0026none",
+					"Behavior": "\u0026kp",
 					"Notes": "",
-					"Args": []
+					"Args": [
+						"LA(LC(LEFT))"
+					]
 				},
 				{
 					"Name": "",
-					"Behavior": "\u0026none",
+					"Behavior": "\u0026kp",
 					"Notes": "",
-					"Args": []
+					"Args": [
+						"LA(LC(RIGHT))"
+					]
 				},
 				{
 					"Name": "",
