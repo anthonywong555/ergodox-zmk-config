@@ -391,7 +391,7 @@
 					"Behavior": "&kp",
 					"Notes": "",
 					"Args": [
-						"C_VOLUME_DOWN"
+						"LEFT_GUI"
 					]
 				},
 				{
@@ -399,7 +399,7 @@
 					"Behavior": "&kp",
 					"Notes": "",
 					"Args": [
-						"C_VOLUME_UP"
+						"EQUAL"
 					]
 				},
 				{
@@ -599,7 +599,7 @@
 					"Behavior": "&kp",
 					"Notes": "",
 					"Args": [
-						"LEFT_SHIFT"
+						"LEFT_ALT"
 					]
 				},
 				{
