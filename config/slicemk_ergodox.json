@@ -69,7 +69,7 @@
 					"Behavior": "&kp",
 					"Notes": "",
 					"Args": [
-						"PRINTSCREEN"
+						"LEFT_GUI"
 					]
 				},
 				{
